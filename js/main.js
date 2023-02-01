@@ -25,7 +25,7 @@ const kittenOne = `<li class="card">
 </li>`;
 
 const kittenTwo = `<li class="card">
-    < img class="card_img" src = "https://dev.adalab.es/sphynx-gato.webp" alt = "sphynx-cat" />
+    <img class="card_img" src ="https://dev.adalab.es/sphynx-gato.webp" alt = "sphynx-cat" />
     <h3 class="card_title">Fiona</h3>
     <h4 class="card_race">Sphynx</h4>
     <p class="card_description">
