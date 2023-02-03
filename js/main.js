@@ -79,10 +79,9 @@ sectionList.innerHTML = kittenTwo;
 
   let html = '';
 
-  if (kittenRace1 === "Siamés") {
+  if (kittenRace1 === "") {
     html = `Uy que despiste, no sabemos su raza`;
   } else {
     html = race;
   }
-
   
