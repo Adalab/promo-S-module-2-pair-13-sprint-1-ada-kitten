@@ -56,4 +56,33 @@ const kittenThree = `<li class="card">
 </article>
 </li>`;
 
-sectionList.innerHTML = kittenOne + kittenTwo + kittenThree;
+// sectionList.innerHTML = kittenOne + kittenTwo + kittenThree;
+
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+
+const descrSearchText = input_search_desc.value;
+
+/* if( kittenDesc1.includes(descrSearchText) ) {
+  sectionList.innerHTML = kittenOne;
+  }
+  
+  if( kittenDesc2.includes(descrSearchText) ) {
+sectionList.innerHTML = kittenTwo;
+  }
+  
+  if( kittenDesc3.includes(descrSearchText) ) {
+    sectionList.innerHTML = kittenThree;
+  } */
+
+
+
+  let html = '';
+
+  if (kittenRace1 === "Siamés") {
+    html = `Uy que despiste, no sabemos su raza`;
+  } else {
+    html = race;
+  }
+
+  
