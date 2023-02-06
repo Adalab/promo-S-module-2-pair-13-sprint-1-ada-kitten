@@ -105,6 +105,8 @@ if( kittenDesc3.includes(descrSearchText) ) {
 const form = document.querySelector('.js-new-form');
 const formLogo = document.querySelector('.js-nav');
 
+//creamos la variable formLogo porque es donde queremos que actúe el listener
+
 formLogo.addEventListener('click', (event)=> {
   if (form.classList.contains('collapsed')) {
     form.classList.remove('collapsed');
@@ -112,3 +114,5 @@ formLogo.addEventListener('click', (event)=> {
     form.classList.add('collapsed');
   }
 })
+
+
