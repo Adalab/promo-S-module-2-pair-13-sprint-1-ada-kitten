@@ -101,3 +101,14 @@ if( kittenDesc3.includes(descrSearchText) ) {
 
   //Ejercicio 3:
   // La variable y la comprobación se hacen entre la descipción y la construcción del gato para que ya exista la const kittenrace1/2/3, pero no se  haya construido todavía el kittenOne/Two/Three.
+
+//Ejercicio 2.4 Eventos:
+
+  const form = document.querySelector('.js-new-form');
+
+  form.addEventListener('click', (event)=> {
+    if (form.classList.contains('collapsed')) {
+      form.classList.remove('collapsed');
+    } else {
+      form.classList.add('collapsed');
+}})
