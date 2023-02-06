@@ -89,12 +89,10 @@ const descrSearchText = input_search_desc.value;
 
 if( kittenDesc1.includes(descrSearchText) ) {
   sectionList.innerHTML += kittenOne;
-  }
-
-  if( kittenDesc2.includes(descrSearchText) ) {
+  } 
+if( kittenDesc2.includes(descrSearchText) ) {
 sectionList.innerHTML += kittenTwo;
   }
-
 if( kittenDesc3.includes(descrSearchText) ) {
     sectionList.innerHTML += kittenThree;
   }
@@ -104,11 +102,13 @@ if( kittenDesc3.includes(descrSearchText) ) {
 
 //Ejercicio 2.4 Eventos:
 
-  const form = document.querySelector('.js-new-form');
+const form = document.querySelector('.js-new-form');
+const formLogo = document.querySelector('.js-nav');
 
-  form.addEventListener('click', (event)=> {
-    if (form.classList.contains('collapsed')) {
-      form.classList.remove('collapsed');
-    } else {
-      form.classList.add('collapsed');
-}})
+formLogo.addEventListener('click', (event)=> {
+  if (form.classList.contains('collapsed')) {
+    form.classList.remove('collapsed');
+  } else {
+    form.classList.add('collapsed');
+  }
+})
