@@ -36,7 +36,7 @@ const kittenOne = `<li class="card">
 //kittenTwo
 const kittenImage2 = "https://dev.adalab.es/sphynx-gato.webp";
 const kittenName2 = 'Fiona';
-const kittenDesc2 =  'Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.';
+const kittenDesc2 = 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.';
 const kittenRace2 = 'Sphynx';
 
 html = ''; //No se pone el let xq ya está definida arriba.
@@ -87,18 +87,18 @@ const kittenThree = `<li class="card">
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
 
-if( kittenDesc1.includes(descrSearchText) ) {
+if (kittenDesc1.includes(descrSearchText)) {
   sectionList.innerHTML += kittenOne;
-  } 
-if( kittenDesc2.includes(descrSearchText) ) {
-sectionList.innerHTML += kittenTwo;
-  }
-if( kittenDesc3.includes(descrSearchText) ) {
-    sectionList.innerHTML += kittenThree;
-  }
+}
+if (kittenDesc2.includes(descrSearchText)) {
+  sectionList.innerHTML += kittenTwo;
+}
+if (kittenDesc3.includes(descrSearchText)) {
+  sectionList.innerHTML += kittenThree;
+}
 
-  //Ejercicio 3:
-  // La variable y la comprobación se hacen entre la descipción y la construcción del gato para que ya exista la const kittenrace1/2/3, pero no se  haya construido todavía el kittenOne/Two/Three.
+//Ejercicio 3:
+// La variable y la comprobación se hacen entre la descipción y la construccrión del gato para que ya exista la const kittenrace1/2/3, pero no se  haya construido todavía el kittenOne/Two/Three.
 
 //Ejercicio 2.4 Eventos:
 
@@ -107,7 +107,7 @@ const formLogo = document.querySelector('.js-nav');
 
 //creamos la variable formLogo porque es donde queremos que actúe el listener
 
-formLogo.addEventListener('click', (event)=> {
+formLogo.addEventListener('click', (event) => {
   if (form.classList.contains('collapsed')) {
     form.classList.remove('collapsed');
   } else {
@@ -115,4 +115,38 @@ formLogo.addEventListener('click', (event)=> {
   }
 })
 
+
+//formulario, adicionar nuevo gatito:
+
+const btn = document.querySelector(".js-btn-add");
+
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const inputRace = document.querySelector('.js-race')
+const labelMessageError = document.querySelector('.js-label-error');
+
+
+btn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  const valueRace = inputRace.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = '¡Uy! parece que has olvidado algo';
+  } else {
+    const kittenNew = `<li class="card">
+<article>
+  <img
+    class="card_img" src=${valuePhoto}
+  <h3 class="card_title">${valueName}</h3>
+  <h4 class="card_race">${valueRace}</h4>
+  <p class="card_description">${valueDesc}</p>
+</article>
+</li>`;
+    sectionList.innerHTML += kittenNew;
+  }
+})
 
