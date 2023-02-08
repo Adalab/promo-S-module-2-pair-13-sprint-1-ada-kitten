@@ -24,13 +24,13 @@ if (kittenRace1 === "") {
 }
 
 const kittenOne = `<li class="card">
-<article>
-  <img
-    class="card_img" src=${kittenImage1}
-  <h3 class="card_title">${kittenName1}</h3>
-  <h4 class="card_race">${html}</h4>
-  <p class="card_description">${kittenDesc1}</p>
-</article>
+  <article>
+    <img
+      class="card_img" src=${kittenImage1}
+    <h3 class="card_title">${kittenName1}</h3>
+    <h4 class="card_race">${html}</h4>
+    <p class="card_description">${kittenDesc1}</p>
+  </article>
 </li>`;
 
 //kittenTwo
@@ -97,26 +97,28 @@ if (kittenDesc3.includes(descrSearchText)) {
   sectionList.innerHTML += kittenThree;
 }
 
-//Ejercicio 3:
+//2.3 Condicionales:
+//2. Listado:
 // La variable y la comprobación se hacen entre la descipción y la construccrión del gato para que ya exista la const kittenrace1/2/3, pero no se  haya construido todavía el kittenOne/Two/Three.
 
-//Ejercicio 2.4 Eventos:
+//2.4 Eventos:
+//1.Formulario: mostrar/ocultar:
 
-const form = document.querySelector('.js-new-form');
-const formLogo = document.querySelector('.js-nav');
+// const form = document.querySelector('.js-new-form');
+// const formLogo = document.querySelector('.js-nav');
 
-//creamos la variable formLogo porque es donde queremos que actúe el listener
+// //creamos la variable formLogo porque es donde queremos que actúe el listener
 
-formLogo.addEventListener('click', (event) => {
-  if (form.classList.contains('collapsed')) {
-    form.classList.remove('collapsed');
-  } else {
-    form.classList.add('collapsed');
-  }
-})
+// formLogo.addEventListener('click', (event) => {
+//   if (form.classList.contains('collapsed')) {
+//     form.classList.remove('collapsed');
+//   } else {
+//     form.classList.add('collapsed');
+//   }
+// })
 
 
-//formulario, adicionar nuevo gatito:
+//2.Formulario: adicionar nuevo gatito:
 
 const btn = document.querySelector(".js-btn-add");
 
@@ -149,4 +151,42 @@ btn.addEventListener('click', (event) => {
     sectionList.innerHTML += kittenNew;
   }
 })
+
+//3.FORMULARIO: cancelar formulario:
+
+// const cancelBtn = document.querySelector('.js-btn-cancel');
+
+// cancelBtn.addEventListener('click' , (event) =>{
+// console.log('es esto?');
+// })
+
+//He añadido la class js-btn-cancel
+
+//2.5 Funciones: Ejercicio 1. Formularios: mostrar/ocultar
+
+const newFormElement = document.querySelector('.js-nav')
+const form = document.querySelector('.js-new-form');
+
+function showNewCatForm() {
+  form.classList.remove('collapsed');
+}
+
+function hideNewCatForm() {
+  form.classList.add('collapsed');
+}
+
+newFormElement.addEventListener('click', handleClickNewCatForm);
+
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+  console.log ('hola');
+  if (form.classList.contains('collapsed')) {
+    showNewCatForm(); //llama a la función
+
+  } else {
+    hideNewCatForm(); //Llama a la función
+  }
+}
+
 
