@@ -34,18 +34,55 @@ const kittenData_3 = {
 
 const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
 
-const input_search_desc = document.querySelector('.js_in_search_desc');
-const descrSearchText = input_search_desc.value;
 
-if (kittenDataList[0]) {
-  sectionList.innerHTML = renderKitten(kittenDataList[0]);
+function renderKittenList(kittenDataList) {
+  for (let i = 0; i < kittenDataList.length; i++){
+    sectionList.innerHTML += renderKitten(kittenDataList[i]);
+  }
 }
-if (kittenDataList[1]) {
-  sectionList.innerHTML += renderKitten(kittenDataList[1]);
+renderKittenList(kittenDataList);
+
+// function filterKitten(event) {
+//   event.preventDefault();
+//   listElement.innerHTML = '';
+//   if (kittenDesc1.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenOne;
+//   }
+//   if (kittenDesc2.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenTwo;
+//   }
+//   if (kittenDesc3.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenThree;
+//   }
+// }
+
+function filterKitten(event) {
+  event.preventDefault();
+  const descrSearchText = input_search_desc.value;
+  listElement.innerHTML = '';
+  for (const kittenItem of kittenDataList) {
+    sectionList.innerHTML += renderKitten(kittenItem);
+    console.log('lo de los gatos');
+    //Completa el código
+    //Comprueba si cada gatito contiene la descripción
+    //Si la contiene pintamos un gatito
+    //utilizando la función renderKitten(kittenItem)
+  }
 }
-if (kittenDataList[2]) {
-  sectionList.innerHTML += renderKitten(kittenDataList[2]);
-}
+renderKitten(kittenItem);
+
+// const input_search_desc = document.querySelector('.js_in_search_desc');
+// const descrSearchText = input_search_desc.value;
+
+// if (kittenDataList[0]) {
+//   sectionList.innerHTML = renderKitten(kittenDataList[0]);
+// }
+// if (kittenDataList[1]) {
+//   sectionList.innerHTML += renderKitten(kittenDataList[1]);
+// }
+// if (kittenDataList[2]) {
+//   sectionList.innerHTML += renderKitten(kittenDataList[2]);
+// }
 
 function renderKitten(kittenData) {
   const html = `<li class="card">
